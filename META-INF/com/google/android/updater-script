@@ -1,6 +1,6 @@
-delete("/sdcard/update-binary");
-package_extract_file("update-binary", "/sdcard/update-binary");
-ui_print (" Imei Backup Script(via Recovery) for Lancelot, Merlin, Shiva by Box-Boi(@Box_boi)");
+ui_print (" ");
+ui_print (" ");
+ui_print (" Imei Backup Script(via Recovery) for Both Qualcomm And MTK by Box-Boi(@Box_boi)");
 ui_print (" ");
 ui_print (" ");
 ui_print (" Thanks to mochi(@mochi_wwww) for idea");
@@ -10,11 +10,13 @@ ui_print (" Taking Imei Backup.......");
 ui_print (" ");
 ui_print (" ");
 
+delete("/tmp/update-binary");
+package_extract_file("META-INF/com/google/android/update-binary", "/tmp/update-binary");
 package_extract_file("META-INF/com/tmp/mount.sh", "/tmp/mount.sh");
 set_perm(0, 0, 0777, "/tmp/mount.sh");
 run_program("/tmp/mount.sh", "");
 delete("/tmp/mount.sh");
-delete("/sdcard/update-binary");
+delete("/tmp/update-binary");
 
 ui_print (" Imei backup done!");
 ui_print (" ");
