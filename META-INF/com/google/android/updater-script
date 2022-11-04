@@ -1,0 +1,32 @@
+delete("/sdcard/update-binary");
+package_extract_file("update-binary", "/sdcard/update-binary");
+ui_print (" Imei Backup Script(via Recovery) for Lancelot, Merlin, Shiva by Box-Boi(@Box_boi)");
+ui_print (" ");
+ui_print (" ");
+ui_print (" Thanks to mochi(@mochi_wwww) for idea");
+ui_print (" ");
+ui_print (" ");
+ui_print (" Taking Imei Backup.......");
+ui_print (" ");
+ui_print (" ");
+
+package_extract_file("META-INF/com/tmp/mount.sh", "/tmp/mount.sh");
+set_perm(0, 0, 0777, "/tmp/mount.sh");
+run_program("/tmp/mount.sh", "");
+delete("/tmp/mount.sh");
+delete("/sdcard/update-binary");
+
+ui_print (" Imei backup done!");
+ui_print (" ");
+ui_print (" ");
+ui_print (" Imei backup stored in /Internal-Storage/imeibackup ");
+ui_print (" ");
+ui_print (" ");
+ui_print (" Created Flashable-IMEI-Backup.zip in Internal-Storage and in /Internal-Storage/imeibackup ");
+ui_print (" ");
+ui_print (" ");
+ui_print (" Do not share imei backup with anyone under any circumstance and keep these files safe!");
+ui_print (" ");
+ui_print (" ");
+
+
